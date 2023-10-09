@@ -80,8 +80,13 @@ class BrokersController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Broker $broker)
     {
-        //
+        $broker->delete();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Broker deleted from the database'
+        ]);
     }
 }
