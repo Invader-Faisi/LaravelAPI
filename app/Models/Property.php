@@ -18,4 +18,9 @@ class Property extends Model
         'description',
         'build_year'
     ];
+
+    public function charateristics()
+    {
+        return $this->hasOne(PropertyCharacteristics::class);
+    }
 }
